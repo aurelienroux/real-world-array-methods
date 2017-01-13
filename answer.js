@@ -1525,18 +1525,52 @@ var data = {
 // }
 // console.log(rainToday())
 
+
+
 // JUST GIVE ME THE TEMPERATURE
 // Using the appropriate array method, start with the 
 // hourly data and return an array of only the temperatures. Your returned array should have the same 
 // number of elements as the original array.
 // Example output: [72.9, 70.5, ...]
 
+// var hourlyDataArr = (data.hourly.data);
+
+// var arrSol = hourlyDataArr.map(function(item){
+//     // if there is a temperature key, return its value
+//     if(item.temperature){
+//         return item.temperature;
+//     }
+// });
+// console.log(arrSol);
+
+
+
+// WHEN IS IT GOING TO RAIN
+// Using a chain of two array methods, start with the 
+// hourly data and return an array of Date objects saying 
+// when it will rain. To do this, you'll have to:
+// Eliminate any item where it is not raining.
+// Extract the time from the remaining items and create 
+// a Date object
+
+// var hourlyDataArr = (data.hourly.data);
+// var arrRainPrev = hourlyDataArr.filter(function(item){
+//     if(item.icon === "rain"){
+//         return item;
+//     }
+//     }).map(function(item){
+//         return new Date((item.time)*1000);
+//     });
+// console.log(arrRainPrev);
+
+
+
+// IS IT GOING TO BE SUNNY ALL WEEK?
+// Using the appropriate array method, start with 
+// the daily data and figure out whether it will be 
+// sunny every day of the week. Use the summary and 
+// check if it contains the word "sun" using your 
+// preferred method.
+
 var hourlyDataArr = (data.hourly.data);
 
-var arrSol = hourlyDataArr.map(function(item){
-    // if there is a temperature key, return its value
-    if(item.temperature){
-        return item.temperature;
-    }
-});
-console.log(arrSol);
