@@ -1495,16 +1495,48 @@ var data = {
 // there is going to be any rain in the next 24 hours. The method you use 
 // should return true or false.
 
+// var hourlyDataArr = (data.hourly.data);
+// function rainToday(){
+//     for(var i = 0; i < 24; i++){
+//         if(hourlyDataArr[i].icon === "rain"){
+//             return true
+//         } 
+//     }
+//     return false
+// }
+// console.log(rainToday())
 
-// go in object // go in hourly
+
+
+// IS IT GOING TO RAIN PART 2
+// Using a chain of two array methods, figure out if it's going to rain in the 
+// next 8 hours. To do this, you'll have to start with the hourly data and:
+// Eliminate any item where the time is further than 8 hours from now.
+// Do the same thing as part 1.
+
+// var hourlyDataArr = (data.hourly.data);
+// function rainToday(){
+//     for(var i = 0; i < 8; i++){
+//         if(hourlyDataArr[i].icon === "rain"){
+//             return true
+//         } 
+//     }
+//     return false
+// }
+// console.log(rainToday())
+
+// JUST GIVE ME THE TEMPERATURE
+// Using the appropriate array method, start with the 
+// hourly data and return an array of only the temperatures. Your returned array should have the same 
+// number of elements as the original array.
+// Example output: [72.9, 70.5, ...]
+
 var hourlyDataArr = (data.hourly.data);
 
-function rainToday(){
-    for(var i = 0; i < 24; i++){
-        if(hourlyDataArr[i].icon === "rain"){
-            return true
-        } 
+var arrSol = hourlyDataArr.map(function(item){
+    // if there is a temperature key, return its value
+    if(item.temperature){
+        return item.temperature;
     }
-    return false
-}
-console.log(rainToday())
+});
+console.log(arrSol);
