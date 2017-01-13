@@ -1490,7 +1490,21 @@ var data = {
     "timezone": "America/Montreal"
 }
 
+// // IS IT GOING TO RAIN TODAY******************************************
+// Use the appropriate array method to figure out, using the hourly data, whether 
+// there is going to be any rain in the next 24 hours. The method you use 
+// should return true or false.
 
-console.log(data.timezone);
 
-// IS IT GOING TO RAIN TODAY******************************************
+// go in object // go in hourly
+var hourlyDataArr = (data.hourly.data);
+
+function rainToday(){
+    for(var i = 0; i < 24; i++){
+        if(hourlyDataArr[i].icon === "rain"){
+            return true
+        } 
+    }
+    return false
+}
+console.log(rainToday())
