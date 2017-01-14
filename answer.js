@@ -1572,16 +1572,37 @@ var data = {
 // check if it contains the word "sun" using your 
 // preferred method.
 
-var dailyDataArr = (data.daily.data);
+// var dailyDataArr = (data.daily.data);
+// function sunny(arr){
+//     return (arr.map(function(item) {
+//             if(item.summary.includes("sun")){
+//                 return true;
+//             } 
+//             return false;
+//             })
+//     );
+// }
+// console.log(sunny(dailyDataArr));
 
-function sunny(arr){
-    return (arr.map(function(item) {
-            if(item.summary.includes("sun")){
-                return true;
-            } 
-            return false;
-            })
-    );
+
+
+// How hot will it be today?
+// Using the appropriate array method, start with the hourly data and 
+// figure out what will be the hottest temperature today. As a hint, notice 
+// that you will need to visit each item in turn, but also keep track of 
+// a separate value.
+
+var hourlyDataArr = (data.hourly.data);
+var tmp = 0;
+
+function hottestTemp(arr){
+    (arr.forEach(function(item){
+        if(item.temperature > tmp)
+            return tmp = item.temperature;
+    }));
+    return tmp;
 }
 
-console.log(sunny(dailyDataArr));
+console.log(hottestTemp(hourlyDataArr));
+
+
