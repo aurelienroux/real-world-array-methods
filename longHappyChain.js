@@ -230,8 +230,7 @@ var data =
       "bs": "target end-to-end models"
     }
   }
-]
-
+];
 
 // Using a chain of four array methods, do the following:
 // Find out all the people who have .biz emails
@@ -243,4 +242,43 @@ var data =
 // the last one is forEach. Up to you to figure out the
 // two middle ones.
 
-console.log(data[0])
+
+// var One = data.filter(function(item){
+//     return item.email.includes("biz");
+// });
+
+// var Two = One.map(function(item){
+//     return item.address.city;
+// });
+
+// var Three = Two.reduce(function(finalArray, item){
+//     if(finalArray.indexOf(item) < 0){
+//         finalArray.push(item);
+//     } return finalArray;
+// }, []);
+
+// var Four = Three.forEach(function(element){
+//     console.log(element)
+// })
+
+// console.log(Three);
+
+
+function Final(info){
+    return info.filter(function(item){
+        return item.email.includes("biz");
+    })
+    .map(function(item){
+        return item.address.city;
+    })
+    .reduce(function(finalArray, item){
+        if(finalArray.indexOf(item) < 0){
+            finalArray.push(item);
+        } return finalArray;
+    }, [])
+    .forEach(function(element){
+        console.log(element);
+    });
+}
+
+console.log(Final(data));
