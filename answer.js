@@ -1592,17 +1592,37 @@ var data = {
 // that you will need to visit each item in turn, but also keep track of 
 // a separate value.
 
-var hourlyDataArr = (data.hourly.data);
-var tmp = 0;
+// var hourlyDataArr = (data.hourly.data);
+// var tmp = 0;
 
-function hottestTemp(arr){
-    (arr.forEach(function(item){
-        if(item.temperature > tmp)
-            return tmp = item.temperature;
-    }));
-    return tmp;
+// function hottestTemp(arr){
+//     (arr.forEach(function(item){
+//         if(item.temperature > tmp)
+//             return tmp = item.temperature;
+//     }));
+//     return tmp;
+// }
+
+// console.log(hottestTemp(hourlyDataArr));
+
+
+// Stats on this week’s weather
+// Using the appropriate array method, start with the daily data and find 
+// out how many times each icon – representing the weather condition 
+// for that day – appears.
+
+var dailyDataArr = (data.daily.data);
+
+function dailyIcon(arr) {
+    return arr.reduce(function(weekData, day) {
+        if (weekData[day.icon]) {
+            weekData[day.icon]++;
+        } else {
+            weekData[day.icon] = 1;
+        }
+    return weekData;
+    }, {});
 }
 
-console.log(hottestTemp(hourlyDataArr));
-
-
+console.log(dailyIcon(dailyDataArr));
+// console.log(dailyDataArr)
