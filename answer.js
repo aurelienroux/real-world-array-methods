@@ -1488,7 +1488,7 @@ var data = {
     },
     "offset": -4,
     "timezone": "America/Montreal"
-}
+};
 
 // // IS IT GOING TO RAIN TODAY******************************************
 // Use the appropriate array method to figure out, using the hourly data, whether 
@@ -1499,12 +1499,12 @@ var data = {
 // function rainToday(){
 //     for(var i = 0; i < 24; i++){
 //         if(hourlyDataArr[i].icon === "rain"){
-//             return true
+//             return true;
 //         } 
 //     }
-//     return false
+//     return false;
 // }
-// console.log(rainToday())
+// console.log(rainToday());
 
 
 
@@ -1518,12 +1518,12 @@ var data = {
 // function rainToday(){
 //     for(var i = 0; i < 8; i++){
 //         if(hourlyDataArr[i].icon === "rain"){
-//             return true
+//             return true;
 //         } 
 //     }
-//     return false
+//     return false;
 // }
-// console.log(rainToday())
+// console.log(rainToday());
 
 
 
@@ -1572,5 +1572,16 @@ var data = {
 // check if it contains the word "sun" using your 
 // preferred method.
 
-var hourlyDataArr = (data.hourly.data);
+var dailyDataArr = (data.daily.data);
 
+function sunny(arr){
+    return (arr.map(function(item) {
+            if(item.summary.includes("sun")){
+                return true;
+            } 
+            return false;
+            })
+    );
+}
+
+console.log(sunny(dailyDataArr));
