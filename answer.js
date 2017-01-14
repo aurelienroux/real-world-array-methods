@@ -1626,3 +1626,5 @@ function dailyIcon(arr) {
 
 console.log(dailyIcon(dailyDataArr));
 // console.log(dailyDataArr)
+
+
