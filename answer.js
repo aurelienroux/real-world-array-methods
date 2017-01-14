@@ -1554,6 +1554,7 @@ var data = {
 // a Date object
 
 // var hourlyDataArr = (data.hourly.data);
+
 // var arrRainPrev = hourlyDataArr.filter(function(item){
 //     if(item.icon === "rain"){
 //         return item;
